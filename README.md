@@ -4,8 +4,6 @@
 
 This project focuses on recovering a weak, deeply buried signal from noisy telemetry data using advanced Digital Signal Processing (DSP) techniques. The challenge involves data reconstruction, carrier and timing recovery, demodulation, and bit extraction.
 
-
-
 # Objective:
 
 Parse and reconstruct IQ data from hexadecimal text files.
@@ -26,45 +24,85 @@ Data Size: ~186 million samples (after reconstruction).
 IQ samples are represented in interleaved real and imaginary format.
 
 # Workflow
-# Stage 0: Data Reconstruction
+# 1. Signal Characteristics
 
-Convert hexadecimal text files into complex floating-point IQ samples.
+Specify modulation type (BPSK, QPSK, etc.) if known.
 
-Implement memory-efficient parsing using batch or streaming processing.
+Mention carrier frequency range and expected bandwidth.
 
-Save reconstructed IQ samples as .npy files for easier processing.
+Note the duration of signal versus noise segments.
 
-# Stage I: Signal Detection
+# 2. Noise Analysis
 
-Perform spectral analysis to confirm signal presence.
+SNR estimates before and after filtering.
 
-Estimate carrier frequency and frequency drift.
+Noise type (white Gaussian, thermal, interference, etc.).
 
-Tools: FFT, periodogram, and signal averaging techniques.
+Techniques used for noise suppression (bandpass filters, moving average, etc.).
 
-# Stage II: Carrier & Timing Recovery
+# 3. Pre-processing Steps
 
-Lock onto drifting carrier using frequency correction techniques.
+DC offset removal.
 
-Recover symbol clock using methods like Gardner Timing Error Detector or autocorrelation.
+Normalization of IQ samples.
 
-Adjust sampling to one sample per symbol for accurate demodulation.
+Windowing or averaging applied before FFT.
 
-# Stage III: Demodulation
+# 4. Algorithm Choices & Justifications
 
-Apply phase correction and symbol alignment.
+Why K-means was chosen for demodulation.
 
-Use K-means clustering for constellation demodulation (for BPSK/QPSK).
+Why Gardner or autocorrelation timing recovery was used.
 
-Extract raw bits from demodulated symbols.
+Any alternative methods considered and why they were rejected.
 
-# Stage IV: Bit Extraction & Analysis
+# 5. Performance Metrics
 
-Convert symbol sequence into binary bits.
+Bit error rate (BER) if you compared extracted bits with ground truth.
 
-Validate extracted bits using checksum or known patterns.
+Constellation diagram clarity before and after phase correction.
 
-Optionally, reconstruct transmitted messages or telemetry info.
+Carrier frequency estimation error.
+
+# 6. Visualization
+
+Spectrograms showing signal over time.
+
+FFT plots showing carrier peak.
+
+Constellation plots before and after clustering.
+
+Timing error plots for symbol synchronization.
+
+# 7. Optimizations
+
+Memory-efficient parsing for large datasets.
+
+Batch processing to handle huge IQ arrays.
+
+Use of vectorized operations in numpy for speed.
+
+# 8. Tools & Environment
+
+Python version, OS, hardware specs (especially if large datasets).
+
+Any Jupyter notebooks for interactive exploration.
+
+Optional: GPU usage if FFT or clustering was accelerated.
+
+# 9. Known Limitations
+
+Uncertainty in phase offset for unsupervised demodulation.
+
+Sensitivity to extreme frequency drift.
+
+Signal detection may fail if SNR drops below a threshold.
+
+# 10. Acknowledgements
+
+Dataset provider or hackathon organizers.
+
+Any libraries, frameworks, or mentors that helped.
 
 # Report link
 https://drive.google.com/file/d/1sYnyF3yrYjXH2HzWZ7mspeqqyFxemvCS/view?usp=sharing
