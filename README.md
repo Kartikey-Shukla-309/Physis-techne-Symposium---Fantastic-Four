@@ -1,10 +1,10 @@
 # Physis-techne-Symposium---Fantastic-Four
 
-Project Overview
+# Project Overview
 
 This project focuses on recovering a weak, deeply buried signal from noisy telemetry data using advanced Digital Signal Processing (DSP) techniques. The challenge involves data reconstruction, carrier and timing recovery, demodulation, and bit extraction.
 
-Objective:
+# Objective:
 
 Parse and reconstruct IQ data from hexadecimal text files.
 
@@ -14,17 +14,16 @@ Implement carrier frequency and symbol timing recovery.
 
 Demodulate the signal to extract transmitted bits.
 
-Dataset
+# Dataset
 
-Source: [Provide Dataset Link or Location]
-
+Source: https://huggingface.co/datasets/AkshatRai07/PhysisTechne26Electronics
 Format: 300 hexadecimal text files representing raw telemetry data.
 
 Data Size: ~186 million samples (after reconstruction).
 
 IQ samples are represented in interleaved real and imaginary format.
 
-Workflow
+# Workflow
 Stage 0: Data Reconstruction
 
 Convert hexadecimal text files into complex floating-point IQ samples.
@@ -64,3 +63,8 @@ Convert symbol sequence into binary bits.
 Validate extracted bits using checksum or known patterns.
 
 Optionally, reconstruct transmitted messages or telemetry info.
+
+# Report link
+https://drive.google.com/file/d/1sYnyF3yrYjXH2HzWZ7mspeqqyFxemvCS/view?usp=sharing
+
+# Video link
