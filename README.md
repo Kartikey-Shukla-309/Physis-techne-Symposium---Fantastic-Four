@@ -24,7 +24,7 @@ Data Size: ~186 million samples (after reconstruction).
 IQ samples are represented in interleaved real and imaginary format.
 
 # Workflow
-Stage 0: Data Reconstruction
+# Stage 0: Data Reconstruction
 
 Convert hexadecimal text files into complex floating-point IQ samples.
 
@@ -32,7 +32,7 @@ Implement memory-efficient parsing using batch or streaming processing.
 
 Save reconstructed IQ samples as .npy files for easier processing.
 
-Stage I: Signal Detection
+# Stage I: Signal Detection
 
 Perform spectral analysis to confirm signal presence.
 
@@ -40,7 +40,7 @@ Estimate carrier frequency and frequency drift.
 
 Tools: FFT, periodogram, and signal averaging techniques.
 
-Stage II: Carrier & Timing Recovery
+# Stage II: Carrier & Timing Recovery
 
 Lock onto drifting carrier using frequency correction techniques.
 
@@ -48,7 +48,7 @@ Recover symbol clock using methods like Gardner Timing Error Detector or autocor
 
 Adjust sampling to one sample per symbol for accurate demodulation.
 
-Stage III: Demodulation
+# Stage III: Demodulation
 
 Apply phase correction and symbol alignment.
 
@@ -56,7 +56,7 @@ Use K-means clustering for constellation demodulation (for BPSK/QPSK).
 
 Extract raw bits from demodulated symbols.
 
-Stage IV: Bit Extraction & Analysis
+# Stage IV: Bit Extraction & Analysis
 
 Convert symbol sequence into binary bits.
 
